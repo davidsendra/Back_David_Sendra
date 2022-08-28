@@ -3,21 +3,21 @@ package com.portfolio.dsendra.Dto;
 import javax.validation.constraints.NotBlank;
 
 
-public class dtohys_html {
+public class dtohys_java {
     @NotBlank
     private int porcentualE;
     
     
       
 
-    public dtohys_html() {  
+    public dtohys_java() {  
     }
 
-    public dtohys_html( int porcentualE) {
+    public dtohys_java( int porcentualE) {
         this.porcentualE = porcentualE;
     }
     
-    //seter y geter
+    
 
     public int getPorcentualE() {
         return porcentualE;
