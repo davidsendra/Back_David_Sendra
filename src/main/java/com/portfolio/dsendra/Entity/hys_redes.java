@@ -6,18 +6,18 @@ import javax.persistence.Id;
 
     
     @Entity
-public class hys_java {
+public class hys_redes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int porcentualE;
     
-   
+    //contrucctores
 
-    public hys_java() {
+    public hys_redes() {
     }
 
-    public hys_java( int porcentualE) {
+    public hys_redes( int porcentualE) {
         this.porcentualE = porcentualE;
     }
 

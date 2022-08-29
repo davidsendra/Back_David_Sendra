@@ -1,9 +1,9 @@
 package com.portfolio.dsendra.Controller;
 
-import com.portfolio.dsendra.Dto.dtohys_java;
-import com.portfolio.dsendra.Entity.hys_java;
+import com.portfolio.dsendra.Dto.dtohys_tjava;
+import com.portfolio.dsendra.Entity.hys_tjava;
 import com.portfolio.dsendra.Security.Controller.Mensaje;
-import com.portfolio.dsendra.Service.Shys_java;
+import com.portfolio.dsendra.Service.Shys_tjava;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,41 +19,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/porc_java ") // porcentual java
+@RequestMapping("/porc_tjava") // porcentual tjava
 @CrossOrigin(origins = "http://localhost:4200")
-public class Chys_java {
+public class Chys_tjava {
     @Autowired
-    Shys_java shys_java; // otra variable con todo con minuscula 
+    Shys_tjava shys_tjava; // otra variable con todo con minuscula 
     
     @GetMapping("/lista_porcentual")  //"/lista_porcentual"
-    public ResponseEntity<List<hys_java>> list(){
-        List<hys_java> list = shys_java.list();
+    public ResponseEntity<List<hys_tjava>> list(){
+        List<hys_tjava> list = shys_tjava.list();
         return  new ResponseEntity (list , HttpStatus.OK);
     } 
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<hys_java> getById(@PathVariable("id") int id){
-        if(!shys_java.existsById(id))
+    public ResponseEntity<hys_tjava> getById(@PathVariable("id") int id){
+        if(!shys_tjava.existsById(id))
             return new ResponseEntity(new Mensaje("no esta"), HttpStatus.NOT_FOUND);
-        hys_java hys_java1 = shys_java.getOne(id).get(); //crea otra var
-        return new ResponseEntity(hys_java1, HttpStatus.OK);
+        hys_tjava hys_tjava1 = shys_tjava.getOne(id).get(); //crea otra var
+        return new ResponseEntity(hys_tjava1, HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!shys_java .existsById(id)) {
+        if (!shys_tjava .existsById(id)) {
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         }
-        shys_java .delete(id);
+        shys_tjava .delete(id);
         return new ResponseEntity(new Mensaje("a sido eliminado"), HttpStatus.OK);
     }  
     
      @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtohys_java dtojava){      // creao una variable
+    public ResponseEntity<?> create(@RequestBody dtohys_tjava dtotjava){      // creao una variable
         
             
-        hys_java hys_java1 = new hys_java(dtojava.getPorcentualE());
-        shys_java.save(hys_java1);
+        hys_tjava hys_tjava1 = new hys_tjava(dtotjava.getPorcentualE());
+        shys_tjava.save(hys_tjava1);
                      
 
         
@@ -63,17 +63,17 @@ public class Chys_java {
     
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtohys_java dtojava){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtohys_tjava dtotjava){
         //Validamos si existe el ID
-        if(!shys_java .existsById(id))
+        if(!shys_tjava .existsById(id))
             return new ResponseEntity(new Mensaje("El ID no exite"), HttpStatus.BAD_REQUEST);
         
         
-        hys_java hys_java1 = shys_java .getOne(id).get();
-        hys_java1.setPorcentualE(dtojava.getPorcentualE());
+        hys_tjava hys_tjava1 = shys_tjava .getOne(id).get();
+        hys_tjava1.setPorcentualE(dtotjava.getPorcentualE());
         
         
-        shys_java .save(hys_java1);
+        shys_tjava .save(hys_tjava1);
         return new ResponseEntity(new Mensaje("Porcentual actualizado"), HttpStatus.OK);
              
     }
