@@ -49,7 +49,7 @@ public class AuthController {
             return new ResponseEntity(new Mensaje("algo esta mal en el email"),HttpStatus.BAD_REQUEST);
         
         if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))
-            return new ResponseEntity(new Mensaje("tu nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("tu usuario ya existe"), HttpStatus.BAD_REQUEST);
         
         if(usuarioService.existsByEmail(nuevoUsuario.getEmail()))
             return new ResponseEntity(new Mensaje(" email ya existe"), HttpStatus.BAD_REQUEST);
