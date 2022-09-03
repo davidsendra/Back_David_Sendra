@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/porc_jscript") // porcentual jscript
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontdavidsendra-55ecc.firebaseapp.com")
 public class Chys_jscript {
     @Autowired
     Shys_jscript shys_jscript; 

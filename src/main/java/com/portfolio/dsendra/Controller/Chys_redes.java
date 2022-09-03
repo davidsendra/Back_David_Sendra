@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/porc_redes") // porcentual redes
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontdavidsendra-55ecc.firebaseapp.com")
 public class Chys_redes {
     @Autowired
     Shys_redes shys_redes; // otra variable con todo con minuscula 
