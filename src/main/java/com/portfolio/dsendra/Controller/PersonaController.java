@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
-@CrossOrigin(origins = "https://frontdavidsendra-55ecc.firebaseapp.com")
+@CrossOrigin(origins = "https://frontdavidsendra-f4f40.firebaseapp.com")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/porc_github") // porcentual github
-@CrossOrigin(origins = "https://frontdavidsendra-55ecc.firebaseapp.com")
+@CrossOrigin(origins = "https://frontdavidsendra-f4f40.firebaseapp.com")
 public class Chys_github {
     @Autowired
     Shys_github shys_github; // otra variable con todo con minuscula 
